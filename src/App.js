@@ -3,8 +3,8 @@ import Weather from "./Weather";
 export default function App() {
   return (
     <div className="App">
-      <Weather />
       <h1> WeatherApp </h1>
+      <Weather />
       <footer>
         {" "}
         This project is coded by{" "}
