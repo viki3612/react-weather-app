@@ -23,6 +23,7 @@ export default function WeatherForecastDay(props) {
         src={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`}
         className="forecast-icons"
         alt="weather"
+        width="50"
       />
       <div className="WeatherForecast-temperatures mb-3">
         <span className="WeatherForecast-temperature-max">{maxTemp()}</span>
