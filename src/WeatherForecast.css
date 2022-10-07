@@ -5,3 +5,13 @@
   opacity: 0.6;
   margin-left: 5px;
 }
+
+.WeatherForecast .forecast-box {
+  margin: 0px 6px;
+  border: 1px solid rgb(135, 135, 135, 0.3);
+
+  border-radius: 10px;
+}
+.WeatherForecast-day {
+  font-size: 19px;
+}

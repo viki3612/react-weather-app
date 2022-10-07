@@ -9,20 +9,20 @@ export default function WeatherContent(props) {
         <li>
           <FormattedDate date={props.data.date} />
         </li>
-        <li className="text-capitalize">{props.data.description}</li>
       </ul>
-      <div className="row">
-        <div className="col-6">
+      <div className="row main-temperature">
+        <div className="col mt-3">
           <img src={props.data.iconUrl} alt="weather" />
           <WeatherTemperature celcius={props.data.temperature} />
         </div>
-        <div className="col-6">
-          <ul>
-            <li>Wind: {Math.round(props.data.wind)} km/h </li>
-
-            <li>Humidity: {Math.round(props.data.humidity)} % </li>
-          </ul>
+        <div className="text-capitalize mb-3">{props.data.description}</div>
+      </div>
+      <div className="row weather-details mb-5">
+        <div className="col">
+          Feels like: {Math.round(props.data.feels_like)}°
         </div>
+        <div className="col">Wind: {Math.round(props.data.wind)} km/h</div>
+        <div className="col">Humidity: {Math.round(props.data.humidity)}% </div>
       </div>
     </div>
   );
