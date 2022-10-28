@@ -1,5 +1,5 @@
 .Weather {
-  padding: 20px;
+  padding: 30px;
   border-radius: 10px;
   color: rgb(135, 135, 135);
   background-color: #a3e4db;
@@ -10,6 +10,7 @@
   font-weight: 400;
   margin: 20px 0 0 0;
   line-height: 29px;
+  color: black;
 }
 
 .Weather ul {
@@ -18,12 +19,12 @@
 }
 
 .Weather li {
-  font-weight: 100;
   line-height: 19px;
   list-style: none;
 }
 .Weather .main-temperature {
   text-align: center;
+  font-weight: 500;
 }
 .Weather .temperature {
   font-weight: bold;
@@ -44,6 +45,7 @@
   position: relative;
   line-height: 1;
   top: -34px;
+  right: -10px;
 }
 .Weather .unit a {
   text-decoration: none;
@@ -51,4 +53,14 @@
 }
 .Weather .weather-details {
   text-align: center;
+}
+.Weather .btn {
+  color: black;
+  margin-left: 0px;
+  transition: all 200ms ease-in-out;
+}
+.Weather .btn:hover {
+  background-color: #4baea0;
+  color: white;
+  border-color: #4baea0;
 }
