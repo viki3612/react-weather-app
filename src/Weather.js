@@ -7,6 +7,7 @@ import axios from "axios";
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [background, setBackground] = useState();
 
   function handleResponse(response) {
     setWeatherData({
@@ -21,16 +22,24 @@ export default function Weather(props) {
       iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       date: new Date(response.data.dt * 1000),
     });
+    let pexelsApiKey =
+      "563492ad6f9170000100000145a90d0d1df34715bf82ec969d716060";
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${response.data.weather[0].main}&per_page=6`;
+    let headers = { Authorization: `Bearer ${pexelsApiKey}` };
+    axios.get(pexelsApiUrl, { headers }).then(handlePexelResponse);
   }
 
   function search() {
-    const apiKey = "210d99196a88b9257ed8cb3535a0a0c5";
+    const apiKey = "0f8bc384a7c31b717a18cfe38a95ae06";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
   function handleSubmit(event) {
     event.preventDefault();
     search();
+  }
+  function handlePexelResponse(response) {
+    setBackground(response.data.photos[0].src.original);
   }
 
   function handleCityChange(event) {
@@ -66,6 +75,10 @@ export default function Weather(props) {
     );
   } else {
     search();
-    return "loading";
+    return (
+      <div className="bgImage">
+        <img src={background} alt="bgImage" />
+      </div>
+    );
   }
 }
