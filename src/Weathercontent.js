@@ -19,15 +19,15 @@ export default function WeatherContent(props) {
       </div>
       <div className="row weather-details mb-4">
         <div className="col">
-          <i class="fa-solid fa-temperature-low"></i> Feels like:{" "}
+          <i className="fa-solid fa-temperature-low"></i> Feels like:{" "}
           {Math.round(props.data.feels_like)}°
         </div>
         <div className="col">
-          <i class="fa-solid fa-wind"></i> Wind: {Math.round(props.data.wind)}{" "}
-          km/h
+          <i className="fa-solid fa-wind"></i> Wind:{" "}
+          {Math.round(props.data.wind)} km/h
         </div>
         <div className="col">
-          <i class="fa-solid fa-droplet"></i> Humidity:{" "}
+          <i className="fa-solid fa-droplet"></i> Humidity:{" "}
           {Math.round(props.data.humidity)}%{" "}
         </div>
       </div>
