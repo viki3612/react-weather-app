@@ -7,7 +7,7 @@ import axios from "axios";
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ ready: false });
-  const [background, setBackground] = useState();
+  const [background, setBackground] = useState(null);
 
   function handleResponse(response) {
     setWeatherData({
@@ -76,9 +76,11 @@ export default function Weather(props) {
   } else {
     search();
     return (
-      <div className="bgImage">
-        <img src={background} alt="bgImage" />
-      </div>
+      <div
+        style={{
+          backgroundImage: `url(${background})`,
+        }}
+      ></div>
     );
   }
 }
