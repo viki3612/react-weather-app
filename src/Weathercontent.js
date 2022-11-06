@@ -15,9 +15,9 @@ export default function WeatherContent(props) {
           <img src={props.data.iconUrl} alt="weather" />
           <WeatherTemperature celcius={props.data.temperature} />
         </div>
-        <div className="text-capitalize mb-4">{props.data.description}</div>
+        <div className="text-capitalize m-3">{props.data.description}</div>
       </div>
-      <div className="row weather-details mb-4">
+      <div className="row weather-details m-3">
         <div className="col">
           <i className="fa-solid fa-temperature-low"></i> Feels like:{" "}
           {Math.round(props.data.feels_like)}°

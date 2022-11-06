@@ -8,7 +8,7 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [background, setBackground] = useState(null);
-
+  console.log(background);
   function handleResponse(response) {
     setWeatherData({
       ready: true,
@@ -24,7 +24,7 @@ export default function Weather(props) {
     });
     let pexelsApiKey =
       "563492ad6f9170000100000145a90d0d1df34715bf82ec969d716060";
-    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${response.data.weather[0].main}&per_page=6`;
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${response.data.weather[0].description}&per_page=1`;
     let headers = { Authorization: `Bearer ${pexelsApiKey}` };
     axios.get(pexelsApiUrl, { headers }).then(handlePexelResponse);
   }
@@ -48,25 +48,26 @@ export default function Weather(props) {
 
   if (weatherData.ready) {
     return (
-      <div className="Weather">
+      <div
+        className="Weather"
+        style={{
+          backgroundImage: `url(${background})`,
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <form onSubmit={handleSubmit}>
-          <div className="row">
-            <div className="col-9">
-              <input
-                type="search"
-                placeholder="Enter a city..."
-                className="form-control"
-                autoFocus="on"
-                onChange={handleCityChange}
-              />
-            </div>
-            <div className="col-3">
-              <input
-                type="submit"
-                value="Search"
-                className="btn btn-light w-65"
-              />
-            </div>
+          <div className="search">
+            <input
+              type="search"
+              placeholder="Enter a city..."
+              className="form-control"
+              autoFocus="on"
+              onChange={handleCityChange}
+            />
+
+            <button className="btn btn-default" type="button">
+              <i className="fa-solid fa-magnifying-glass"></i>
+            </button>
           </div>
         </form>
         <Weathercontent data={weatherData} />
@@ -75,12 +76,6 @@ export default function Weather(props) {
     );
   } else {
     search();
-    return (
-      <div
-        style={{
-          backgroundImage: `url(${background})`,
-        }}
-      ></div>
-    );
+    return null;
   }
 }

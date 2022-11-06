@@ -1,8 +1,6 @@
 .Weather {
-  padding: 30px;
+  padding: 40px 30px;
   border-radius: 10px;
-  color: rgb(135, 135, 135);
-  background-color: #a3e4db;
 }
 
 .Weather .city {
@@ -22,6 +20,9 @@
   line-height: 19px;
   list-style: none;
 }
+.Weather img {
+  vertical-align: auto;
+}
 .Weather .main-temperature {
   text-align: center;
   font-weight: 500;
@@ -30,7 +31,6 @@
   font-weight: bold;
   color: rgb(33, 33, 33);
   font-size: 64px;
-  line-height: 64px;
   font-weight: 400;
 }
 
@@ -39,7 +39,6 @@
 }
 
 .Weather .unit {
-  color: rgb(33, 33, 33);
   font-size: 16px;
   font-weight: 400;
   position: relative;
@@ -49,18 +48,28 @@
 }
 .Weather .unit a {
   text-decoration: none;
-  color: rgb(135, 135, 135);
+  color: black;
+  opacity: 0.6;
+  transition: all 200ms ease-in-out;
+}
+.Weather .unit a:hover {
+  font-weight: 500;
 }
 .Weather .weather-details {
   text-align: center;
 }
+.Weather .search {
+  width: 100%;
+  position: relative;
+  display: flex;
+  border: none;
+}
 .Weather .btn {
-  color: black;
-  margin-left: 0px;
+  margin-left: 5px;
   transition: all 200ms ease-in-out;
+  background-color: white;
 }
 .Weather .btn:hover {
-  background-color: #4baea0;
+  background-color: rgb(203, 201, 201);
   color: white;
-  border-color: #4baea0;
 }
