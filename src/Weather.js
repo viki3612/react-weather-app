@@ -64,7 +64,6 @@ export default function Weather(props) {
               autoFocus="on"
               onChange={handleCityChange}
             />
-
             <button className="btn btn-default" type="button">
               <i className="fa-solid fa-magnifying-glass"></i>
             </button>
