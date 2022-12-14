@@ -23,6 +23,12 @@
 .Weather img {
   vertical-align: auto;
 }
+.Weather .Content {
+  background-color: rgb(254, 254, 254, 0.5);
+
+  padding: 5px 15px;
+  border-radius: 10px;
+}
 .Weather .main-temperature {
   text-align: center;
   font-weight: 500;
