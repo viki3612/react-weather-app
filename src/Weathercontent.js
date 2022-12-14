@@ -3,7 +3,7 @@ import WeatherTemperature from "./WeatherTemperature";
 import FormattedDate from "./FormattedDate";
 export default function WeatherContent(props) {
   return (
-    <div className="Content mt-3">
+    <div className="Content mt-5">
       <h1 className="city mb-3">{props.data.city}</h1>
       <ul>
         <li>
