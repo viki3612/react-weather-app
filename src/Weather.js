@@ -22,7 +22,7 @@ export default function Weather(props) {
       iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       date: new Date(response.data.dt * 1000),
     });
-    console.log(response.data);
+
     let pexelsApiKey =
       "563492ad6f9170000100000145a90d0d1df34715bf82ec969d716060";
     let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${response.data.weather[0].description}&per_page=1`;
